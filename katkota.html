@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع كتكوتتي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Dancing+Script&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fbe3e3;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+
+        .container {
+            margin: 0 auto;
+            width: 80%;
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: #f07b91;
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        button {
+            background-color: #f07b91;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            margin: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff6b8f;
+            transform: scale(1.1);
+        }
+
+        #advice-container {
+            margin-top: 30px;
+            font-size: 22px;
+            color: #333;
+            background-color: #ffefef;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #f07b91;
+        }
+
+        #advice-text {
+            font-family: 'Dancing Script', cursive;
+            color: #f07b91;
+        }
+
+        .link-container a {
+            display: none; /* إخفاء الأزرار بشكل افتراضي */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>اختاري إحساسك</h1>
+        <div class="feelings">
+            <button class="feeling" onclick="showAdvice('happy')">سعيدة</button>
+            <button class="feeling" onclick="showAdvice('shnoufa')">شنوفة</button>
+            <button class="feeling" onclick="showAdvice('zaoufa')">زعوفة</button>
+            <button class="feeling" onclick="showAdvice('excited')">متحمسة</button>
+            <button class="feeling" onclick="showAdvice('zaafana')">زعفانة على محمد</button>
+        </div>
+        <div id="advice-container">
+            <p id="advice-text">سيتم عرض النصيحة هنا.</p>
+            <div class="link-container">
+                <a id="link-happy" href="https://www.youtube.com/watch?v=06Kg6XeMhQU" target="_blank">
+                    <button>اذهب إلى الرابط</button>
+                </a>
+                <a id="link-shnoufa" href="https://www.youtube.com/watch?v=EyfPbjiczc4" target="_blank">
+                    <button>اذهب إلى الرابط</button>
+                </a>
+                <a id="link-zaoufa" href="https://www.youtube.com/watch?v=WwYOAhw12WM" target="_blank">
+                    <button>اذهب إلى الرابط</button>
+                </a>
+                <a id="link-excited" href="https://www.youtube.com/watch?v=VsgpUHUYuJI" target="_blank">
+                    <button>اذهب إلى الرابط</button>
+                </a>
+                <a id="link-zaafana" href="https://www.youtube.com/shorts/fcR6njsDODo" target="_blank">
+                    <button>اذهب إلى الرابط</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showAdvice(feeling) {
+            let adviceText = '';
+            // إخفاء كل الأزرار افتراضيًا
+            document.querySelectorAll('.link-container a').forEach(link => link.style.display = 'none');
+            
+            switch (feeling) {
+                case 'happy':
+                    adviceText = '😁روحي اجري مديها لمحمد مسكين ';
+                    document.getElementById('link-happy').style.display = 'block';
+                    break;
+                case 'shnoufa':
+                    adviceText = '😢 اجري هدري مع محمد يكون متويل عليك مسكين ';
+                    document.getElementById('link-shnoufa').style.display = 'block';
+                    break;
+                case 'zaoufa':
+                    adviceText = '😂تكالماي يهديك ربي ';
+                    document.getElementById('link-zaoufa').style.display = 'block';
+                    break;
+                case 'excited':
+                    adviceText = '😂😂غااايا😁😁 تواصلي مع الدعم التقني تاع الموقع احكيله تشو ';
+                    document.getElementById('link-excited').style.display = 'block';
+                    break;
+                case 'zaafana':
+                    adviceText = '😎الى ضلمك الحلوف مليحله😂 والى ضلمتيه انعلي الشيطان وتفاهمو';
+                    document.getElementById('link-zaafana').style.display = 'block';
+                    break;
+                default:
+                    adviceText = 'اختاري إحساسك أولًا!';
+                    break;
+            }
+
+            document.getElementById('advice-text').innerText = adviceText;
+        }
+    </script>
+</body>
+</html>
